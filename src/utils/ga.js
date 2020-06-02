@@ -7,8 +7,7 @@ class PenguinGA {
 
   initializeGa = async () => {
     try {
-      const GA = await ReactGA.initialize("UA-167960986-1");
-      // const GA = await ReactGA.initialize("UA-164983165-1");
+      const GA = await ReactGA.initialize("");
       console.log("initializeGa successfully", GA);
     } catch (error) {
       console.log("initializeGa error", error);
