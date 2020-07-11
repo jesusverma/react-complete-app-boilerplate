@@ -9,8 +9,9 @@ import history from "utils/history";
 import * as STORAGE from "utils/storage";
 import Loader from "components/loader";
 import ErrorBoundary from "components/pages/error/errorBoundary";
-
+// import Deckgame from "modules/Deckgame";
 const Login = React.lazy(() => import("modules/Login"));
+const Deckgame = React.lazy(() => import("modules/Deckgame"));
 const Dashboard = React.lazy(() => import("modules/Dashboard"));
 const Error404 = React.lazy(() => import("components/pages/error404"));
 
@@ -58,7 +59,7 @@ function AppRouter(props) {
         <Router basename={process.env.PUBLIC_URL} history={history}>
           <Switch>
             <Route exact path="/login" component={Login} />
-            <Route exact path="/" component={Dashboard} />
+            <Route exact path="/" component={Deckgame} />
 
             {/* <PrivateRoute
               exact
@@ -69,7 +70,7 @@ function AppRouter(props) {
             <Route path="*" exact={true} component={Error404} />
           </Switch>
         </Router>
-        <Loader></Loader>
+        {/* <Loader></Loader> */}
       </ErrorBoundary>
     </Suspense>
   );
